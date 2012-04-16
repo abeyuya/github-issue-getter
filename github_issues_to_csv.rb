@@ -24,6 +24,7 @@ header = [
   "Date created",
   "Date modified",
   "Issue type",
+  "Milestone",
   "Priority",
   "Status",
   "Reporter"
@@ -72,6 +73,10 @@ issues.each do |issue|
     when issue['labels'].to_s =~ /LOW/i
       priority = "Minor"
   end
+  milestone = issue['milestone'] || "None"
+  if (milestone != "None")
+    milestone = milestone['title']
+  end
 
   # Needs to match the header order above, date format are based on Jira default
   row = [
@@ -80,6 +85,7 @@ issues.each do |issue|
     DateTime.parse(issue['created_at']).new_offset(TIMEZONE_OFFSET).strftime("%d/%b/%y %l:%M %p"),
     DateTime.parse(issue['updated_at']).new_offset(TIMEZONE_OFFSET).strftime("%d/%b/%y %l:%M %p"),
     type,
+    milestone,
     priority,
     issue['state'],
     issue['user']['login']
