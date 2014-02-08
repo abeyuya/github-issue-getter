@@ -1,0 +1,5 @@
+# info_sample.yml
+username : "hoge"
+password : "hoge"
+user     : "rails"
+project  : "rails"
