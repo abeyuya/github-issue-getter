@@ -24,5 +24,6 @@ db.transaction(true) do
   #ループ
   db.roots.each { |key|
     puts "#{key}: #{db[key]}"
+    pp db[key]
   }
 end

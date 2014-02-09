@@ -1,5 +1,6 @@
 # info_sample.yml
-username : "hoge"
-password : "hoge"
-user     : "rails"
-project  : "rails"
+username  : "my github user name"
+password  : "my github pass"
+user      : "target repo user"
+project   : "target repo name"
+repo_path : "/path/to/local/repo/"
